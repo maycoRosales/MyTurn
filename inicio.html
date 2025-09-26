@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Turno</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    </style>
+</head>
+<body>
+    <div class="card" id="inputCard">
+        <span class="card__title">TURN TO PLAY</span>
+        <p class="card__content">
+            Enter names and time per turn of the players.
+        </p>
+        <br>
+        <div id="jugadores-container">
+            <div class="jugador-input">
+                <div class="brutalist-container">
+                    <input
+                        placeholder="NAME HERE"
+                        class="brutalist-input smooth-type jugador"
+                        id="jugador1"
+                        type="text"
+                    />
+                    <input type="color" id="color1" class="color" value="#4a90e2">
+                    <label for="jugador1" class="brutalist-label">PLAYER 1</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button id="btnMas" class="btnmas card__button">+</button>
+        <br><br>
+        <div class="radio-grup">
+            <label for="tiempoTurno">Time per turn:</label>
+            <input type="number" id="tiempoTurno" placeholder="15">
+            <div class="radio">
+                <label class="check-container">
+                    <input type="radio" name="unidadTiempo" value="segundos" checked="checked">
+                    <div class="checkmark"></div>
+                </label>
+                <span>Sec</span>
+            </div>
+            <div class="radio">
+                <label class="check-container">
+                    <input type="radio" name="unidadTiempo" value="minutos">
+                    <div class="checkmark"></div>
+                </label>
+                <span>Min</span>
+            </div>
+        </div>
+        <br><br>
+        <button class="brutalist-button" onclick="iniciarJuego()">
+            <div class="ms-logo">
+                <div class="ms-logo-square"></div>
+                <div class="ms-logo-square"></div>
+                <div class="ms-logo-square"></div>
+                <div class="ms-logo-square"></div>
+            </div>
+            <div class="button-text">
+                <span>Ready</span>
+                <span>Let's Go</span>
+            </div>
+        </button>
+    </div>
+    <div id="output"></div>
+    <div id="pause">
+        <label class="container">    
+            <input id="pauseCheckbox" type="checkbox">
+            <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="pause">
+                <path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z">
+                </path>
+            </svg>
+            <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="play">
+                <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z">
+                </path>
+            </svg>
+        </label>  
+        <button id="close" class="button_x">
+            <span class="X"></span>
+            <span class="Y"></span>
+            <div class="close">Close</div>
+        </button>
+    </div>
+    <script src="/turno.js"></script>
+</body>
+</html>

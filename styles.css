@@ -1,0 +1,775 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #212121;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+}
+/* .card {
+    display: flexbox;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 60px;
+    border-radius: 50px;
+    background: linear-gradient(225deg, #1e1e1e, #232323);
+    box-shadow:  -20px 20px 60px #1c1c1c,
+                20px -20px 60px #262626;
+} */
+.card {
+    display: flexbox;
+    margin: 50px auto;
+    padding: 60px;
+    width: 300px;
+    background: #fff;
+    border: 6px solid #000;
+    box-shadow: 12px 12px 0 #000;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 17px 17px 0 #000;
+}
+
+.card__title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.card__title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 3px;
+    background-color: #000;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+.card:hover .card__title::after {
+    transform: translateX(0);
+}
+
+.card__content {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000;
+    margin-bottom: 20px;
+}
+/*-------------------------------*/
+.card__button {
+    border: 3px solid #000;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    left: 20%;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 50%;
+    height: 100%;
+}
+
+.card__button::before {
+    content: "MORE+";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105%;
+    background-color: #5ad641;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.card__button:hover::before {
+    transform: translateY(0);
+}
+
+.card__button:active {
+    transform: scale(0.95);
+}
+
+@keyframes glitch {
+    0% {
+    transform: translate(2px, 2px);
+    }
+    25% {
+    transform: translate(-2px, -2px);
+    }
+    50% {
+    transform: translate(-2px, 2px);
+    }
+    75% {
+    transform: translate(2px, -2px);
+    }
+    100% {
+    transform: translate(2px, 2px);
+    }
+}
+
+.glitch {
+    animation: glitch 0.3s infinite;
+}
+
+/*----------------------------------------*/
+/* label {
+    font-size: 20px;
+} */
+/* input{
+    font-size: 20px;
+    border: none;
+    
+                border-radius: 50px;
+                background: linear-gradient(225deg, #b03be6, #d147ff);
+                box-shadow:  -10px 10px 30px #a638d9,
+                            10px -10px 30px #e04cff;
+}
+*/
+/* input name */
+/* From Uiverse.io by 0xnihilism */ 
+.brutalist-container {
+    position:relative;
+    width: 450px;
+    font-family: monospace;
+}
+
+.brutalist-input {
+    width: 50%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+    border: 4px solid #000;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 5px 5px 0 #000, 10px 10px 0 #4a90e2;
+}
+.color{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance: none;
+    background-color: #000;
+    width: 56px;  
+    height: 58px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 20px;
+    /* margin-top: 1px; */
+    box-shadow:5px 5px 0 #000, 10px 10px 0 #4a90e2;
+
+}
+.color::-webkit-color-swatch{
+    border: none;
+}
+.color::-moz-color-swatch{
+    border: none;
+}
+
+@keyframes glitch {
+    0% {
+    transform: translate(0);
+    }
+    20% {
+    transform: translate(-2px, 2px);
+    }
+    40% {
+    transform: translate(-2px, -2px);
+    }
+    60% {
+    transform: translate(2px, 2px);
+    }
+    80% {
+    transform: translate(2px, -2px);
+    }
+    100% {
+    transform: translate(0);
+    }
+}
+
+.brutalist-input:focus {
+    animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite,
+    glitch 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+.brutalist-input:focus::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: white;
+    z-index: -1;
+}
+
+.brutalist-input:focus::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -2;
+    clip-path: inset(0 100% 0 0);
+    animation: glitch-slice 4s steps(2, end) infinite;
+}
+
+@keyframes glitch-slice {
+    0% {
+    clip-path: inset(0 100% 0 0);
+    }
+    10% {
+    clip-path: inset(0 5% 0 0);
+    }
+    20% {
+    clip-path: inset(0 80% 0 0);
+    }
+    30% {
+    clip-path: inset(0 10% 0 0);
+    }
+    40% {
+    clip-path: inset(0 50% 0 0);
+    }
+    50% {
+    clip-path: inset(0 30% 0 0);
+    }
+    60% {
+    clip-path: inset(0 70% 0 0);
+    }
+    70% {
+    clip-path: inset(0 15% 0 0);
+    }
+    80% {
+    clip-path: inset(0 90% 0 0);
+    }
+    90% {
+    clip-path: inset(0 5% 0 0);
+    }
+    100% {
+    clip-path: inset(0 100% 0 0);
+    }
+}
+
+.brutalist-label {
+    position: absolute;
+    left: -3px;
+    top: -35px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    padding: 5px 10px;
+    transform: rotate(-2deg);
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.brutalist-input:focus + .brutalist-label {
+    transform: rotate(0deg) scale(1.05);
+    background-color: #4a90e2;
+}
+
+.smooth-type {
+    position: relative;
+    overflow: hidden;
+}
+
+.smooth-type::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.smooth-type:focus::before {
+    opacity: 1;
+    animation: type-gradient 2s linear infinite;
+}
+
+@keyframes type-gradient {
+    0% {
+    background-position: 300px 0;
+    }
+    100% {
+    background-position: 0 0;
+    }
+}
+
+.brutalist-input::placeholder {
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.brutalist-input:focus::placeholder {
+    color: transparent;
+}
+
+.brutalist-input:focus {
+    animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+@keyframes focus-pulse {
+    0%,
+    100% {
+    border-color: #000;
+    }
+    50% {
+    border-color: #4a90e2;
+    }
+}
+/*-----------------------------------------------*/
+#tiempoTurno{
+    top: -10px;
+    border: 3px solid #000;
+    font-size: 20px;
+    font-family: inherit;
+    transition: transform 0.3s;
+    width: 16%;
+}
+
+#tiempoTurno:focus {
+    outline: none;
+    transform: scale(1.05);
+    background-color: #000;
+    color: #ffffff;
+}
+/*------------------------------------------------*/
+/*  Button Styles  */
+/* From Uiverse.io by 0xnihilism */ 
+.brutalist-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+    cursor: pointer;
+    width: 169px;
+    height: 60px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border: 3px solid #fff;
+    outline: 3px solid #000;
+    box-shadow: 10px 10px 0 #ffc118;
+    transition: all 0.1s ease-out;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.brutalist-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+    );
+    z-index: 1;
+    transition: none;
+    /* Initially hide the pseudo-element */
+    opacity: 0;
+}
+
+@keyframes slide {
+    0% {
+    left: -100%;
+    }
+    100% {
+    left: 100%;
+    }
+}
+
+.brutalist-button:hover::before {
+    /* Show the pseudo-element on hover */
+    opacity: 1;
+    animation: slide 2s infinite;
+}
+
+.brutalist-button:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0 #000;
+    background-color: #000;
+    color: #fff;
+}
+
+@keyframes slide {
+    0% {
+    left: -100%;
+    }
+    100% {
+    left: 100%;
+    }
+}
+
+.brutalist-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0 #fcb50f;
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+/* Rest of the CSS remains the same */
+
+.ms-logo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.brutalist-button:hover .ms-logo {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.brutalist-button:active .ms-logo {
+    transform: rotate(10deg) scale(0.9);
+}
+
+.ms-logo-square {
+    width: 100%;
+    height: 100%;
+}
+
+.ms-logo-square:nth-child(1) {
+    background-color: #f561cd;
+}
+.ms-logo-square:nth-child(2) {
+    background-color: #61f57e;
+}
+.ms-logo-square:nth-child(3) {
+    background-color: #8555f7;
+}
+.ms-logo-square:nth-child(4) {
+    background-color: #ff8c2e;
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    transition: transform 0.2s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+.brutalist-button:hover .button-text {
+    transform: skew(-5deg);
+}
+
+.brutalist-button:active .button-text {
+    transform: skew(5deg);
+}
+
+.button-text span:first-child {
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.button-text span:last-child {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/*------------------------------------------------*/
+.radio-grup{
+    width: 100%;
+    justify-content: stretch;
+}
+.radio{
+    display: inline-block;
+    position: relative;
+    padding: 0 10px 0 10px;
+}
+/* From Uiverse.io by gharsh11032000 */ 
+/* Hide the default checkbox */
+.check-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    left: 60px;
+    top: 8px;
+}
+.check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    border: 2px solid #414141;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/* When the checkbox is checked */
+.check-container input:checked ~ .checkmark {
+    background: #0974f1;
+    border-color: #0974f1;
+    filter: drop-shadow(5px 5px);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+}
+
+.check-container .checkmark:after {
+    inset: 0;
+    margin: auto;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #414141;
+    border-width: 0 0.15em 0.15em 0;
+}
+
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
+    width: 0.25em;
+    height: 0.5em;
+    border: solid #414141;
+    border-width: 0 0.15em 0.15em 0;
+    border-color: white;
+    background-color: transparent;
+    transform: rotate(45deg);
+}
+
+
+/* .jugador{
+    width: 50%;
+} */
+
+/* .btnmas{
+    font-size: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(225deg, #b03be6, #d147ff);
+    box-shadow:  -10px 10px 30px #a638d9,
+                10px -10px 30px #e04cff;
+} */
+/* .start{
+    font-size: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(225deg, #b03be6, #d147ff);
+    box-shadow:  -10px 10px 30px #a638d9,
+                10px -10px 30px #e04cff;
+} */
+/* .jugador-input {
+    margin-bottom: 10px;
+} */
+
+/* Ouput */
+#output  {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+#jugadorcolor {
+    height: 100vh;
+    width: 100vw;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 20%;
+    border-radius: 10px;
+}
+#jugadorcolor h1 {
+    font-size: 94px;
+}
+#jugadorcolor h4 {
+    font-size: 44px;
+}
+/*-----------------------------------------------*/
+/* From Uiverse.io by catraco */ 
+/*------ Settings ------*/
+#pause{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    --color: #000;
+    --size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: var(--size);
+    user-select: none;
+    fill: var(--color);
+}
+
+.container .play {
+    position: absolute;
+    display: none;
+    animation: keyframes-fill .5s;
+}
+
+.container .pause {
+    position: absolute;
+    /* display: none; */
+    animation: keyframes-fill .5s;
+}
+
+/* ------ On check event ------ */
+.container input:checked ~ .play {
+    display: block;
+}
+
+.container input:checked ~ .pause {
+    display: none;
+}
+
+/* ------ Hide the default checkbox ------ */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+    0% {
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+    }
+
+    50% {
+    transform: rotate(-10deg) scale(1.2);
+    }
+}
+
+/* From Uiverse.io by javierBarroso */ 
+.button_x {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 4em;
+    height: 4em;
+    border: none;
+    background: rgba(180, 83, 107, 0.11);
+    transition: background 0.5s;
+}
+
+.X {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2em;
+    height: 1.5px;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.Y {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2em;
+    height: 1.5px;
+    background-color: #fff;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.close {
+    position: absolute;
+    display: flex;
+    padding: 0.8rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    bottom: -90%;
+    left: 50%;
+    width: 3em;
+    height: 1.7em;
+    font-size: 12px;
+    background-color: rgb(19, 22, 24);
+    color: rgb(187, 229, 236);
+    border: none;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.button_x:hover {
+    background-color: rgb(211, 21, 21);
+}
+
+.button_x:active {
+    background-color: rgb(130, 0, 0);
+}
+
+.button_x:hover > .close {
+    animation: close 0.2s forwards 0.25s;
+}
+
+@keyframes close {
+    100% {
+    opacity: 1;
+    }
+}
