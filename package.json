@@ -1,26 +1,23 @@
 {
   "name": "myturn",
   "version": "1.0.0",
-  "description": "App to manage turns",
+  "description": "App para juegos por turnos",
   "main": "turno.js",
   "scripts": {
-    "start": "npx serve .",
     "clean": "rimraf dist",
-    "copy": "mkdirp dist && cpx2 \"*.{html,css,js}\" dist",
-    "minify:html": "cpx2 \"*.html\" dist --exec \"minify <%= file %> -o dist/<%= basename(file) %>\"",
-    "minify:css": "cpx2 \"*.css\" dist --exec \"minify <%= file %> -o dist/<%= basename(file) %>\"",
-    "minify:js": "cpx2 \"*.js\" dist --exec \"minify <%= file %> -o dist/<%= basename(file) %>\"",
-    "build": "npm run clean && npm run copy && npm run minify:html && npm run minify:css && npm run minify:js"
+    "copy": "mkdirp dist && npx cpx \"*.{html,css,js}\" dist",
+    "minify:html": "npx minify inicio.html -o dist/inicio.html",
+    "minify:css": "npx minify styles.css -o dist/styles.css",
+    "minify:js": "npx minify turno.js -o dist/turno.js",
+    "build": "npm run clean && npm run copy && npm run minify:html && npm run minify:css && npm run minify:js",
+    "start": "npx serve dist"
   },
   "author": "mrosales",
   "license": "ISC",
-  "dependencies": {
-    "cpx2": "^1.0.0"
-  },
-
   "devDependencies": {
-    "minify": "^14.1.0",
+    "cpx": "^1.5.0",
     "mkdirp": "^3.0.1",
+    "minify": "^11.4.0",
     "rimraf": "^5.0.5",
     "serve": "^14.2.1"
   }
