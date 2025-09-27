@@ -1,0 +1,24 @@
+{
+  "name": "myturn",
+  "version": "1.0.0",
+  "description": "App to manage turns",
+  "main": "turno.js",
+  "scripts": {
+    "start": "npx serve .",
+    "clean": "rimraf dist",
+    "copy": "mkdirp dist && cpx \"*.{html,css,js}\" dist",
+    "minify:html": "cpx \"*.html\" dist --exec \"minify <%= file %> -o dist/<%= basename(file) %>\"",
+    "minify:css": "cpx \"*.css\" dist --exec \"minify <%= file %> -o dist/<%= basename(file) %>\"",
+    "minify:js": "cpx \"*.js\" dist --exec \"minify <%= file %> -o dist/<%= basename(file) %>\"",
+    "build": "npm run clean && npm run copy && npm run minify:html && npm run minify:css && npm run minify:js"
+  },
+  "author": "mrosales",
+  "license": "ISC",
+  "devDependencies": {
+    "cpx": "^1.2.1",
+    "minify": "^14.1.0",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^5.0.5",
+    "serve": "^14.2.1"
+  }
+}
