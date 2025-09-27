@@ -14,8 +14,11 @@
   },
   "author": "mrosales",
   "license": "ISC",
+  "dependencies": {
+    "cpx2": "^1.0.0"
+  },
+
   "devDependencies": {
-    "cpx2": "^8.0.0",
     "minify": "^14.1.0",
     "mkdirp": "^3.0.1",
     "rimraf": "^5.0.5",
